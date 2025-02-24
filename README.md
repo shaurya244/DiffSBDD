@@ -6,6 +6,9 @@ Official implementation of **DiffSBDD**, an equivariant diffusion model for stru
 [![arXiv](https://img.shields.io/badge/arXiv-2210.13695-B31B1B.svg)](http://arxiv.org/abs/2210.13695)
 [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/arneschneuing/DiffSBDD/blob/main/colab/DiffSBDD.ipynb)
 
+> [!TIP]
+> You can also try out our new 3D generative models for drug design at https://github.com/LPDI-EPFL/DrugFlow.
+
 ![](img/overview.png)
 
 1. [Dependencies](#dependencies)
