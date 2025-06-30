@@ -1182,7 +1182,7 @@ class PredefinedNoiseSchedule(torch.nn.Module):
         log_alphas2_to_sigmas2 = log_alphas2 - log_sigmas2
 
         self.gamma = torch.nn.Parameter(
-            torch.from_numpy(-log_alphas2_to_sigmas2).float(),
+           torch.as_tensor(-log_alphas2_to_sigmas2, dtype=torch.float32),
             requires_grad=False)
 
     def forward(self, t):
