@@ -122,8 +122,8 @@ def get_pocket_from_ligand(pdb_model, ligand, dist_cutoff=8.0):
         if residue.id[1] == resi:
             continue  # skip ligand itself
 
-            coords_np = np.array([a.get_coord() for a in residue.get_atoms()])
-            res_coords = torch.as_tensor(coords_np, dtype=torch.float32)
+        coords_np = np.array([a.get_coord() for a in residue.get_atoms()])
+        res_coords = torch.as_tensor(coords_np, dtype=torch.float32)
         if is_aa(residue.get_resname(), standard=True) \
                 and torch.cdist(res_coords, ligand_coords).min() < dist_cutoff:
             pocket_residues.append(residue)
