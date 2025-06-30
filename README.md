@@ -33,6 +33,16 @@ Official implementation of **DiffSBDD**, an equivariant diffusion model for stru
 ## Dependencies
 
 ### Conda environment
+
+A conda environment can be created and activated using
+```bash
+conda env create -f environment.yaml -n diffsbdd
+conda activate diffsbdd
+```
+
+<details>
+<summary>Previous instructions</summary>
+
 ```bash
 conda create -n sbdd-env
 conda activate sbdd-env
@@ -62,6 +72,8 @@ The code was tested with the following versions
 | SciPy             | 1.7.3     |
 | PyTorch Scatter   | 2.0.9     |
 | OpenBabel         | 3.1.1     |
+</details>
+
 
 ### Pre-trained models
 Pre-trained models can be downloaded from [Zenodo](https://zenodo.org/record/8183747).
@@ -123,13 +135,13 @@ You can use DiffSBDD to optimize existing molecules for given properties via the
 python optimize.py --checkpoint checkpoints/crossdocked_fullatom_cond.ckpt --pdbfile example/5ndu.pdb --outfile output.sdf --ref_ligand example/5ndu_C_8V2.sdf --objective sa --population_size 100 --evolution_steps 10 --top_k 10 --timesteps 100
 ```
 
-Important parameters in the evolutionary algorithum are:
+Important parameters in the evolutionary algorithm are:
 - `--checkpoint`: The checkpoint to use for the noising-denoising model.
 - `--objective`: The optimization objective. Currently supports 'qed' for Quantitative Estimate of Drug-likeness and 'sa' for Synthetic Accessibility. Custom objectives can be implemented within the code.
 - `--population_size`: The size of the molecule population to maintain across the optimization generations.
 - `--evolution_steps`: The number of evolutionary steps (generations) to perform during the optimization process.
 - `--top_k`: The number of top-scoring molecules to select from one generation to the next.
-- `--timesteps`: The number of noise-denoise steps to use in the optimization algorithum. Defaults to 100 (out of T=500).
+- `--timesteps`: The number of noise-denoise steps to use in the optimization algorithm. Defaults to 100 (out of T=500).
 
 
 
